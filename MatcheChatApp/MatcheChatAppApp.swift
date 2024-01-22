@@ -6,9 +6,6 @@
 //
 
 import SwiftUI
-import RealmSwift
-
-let realmApp = RealmSwift.App(id: "application-0-dotyc")
 
 @main
 struct MatcheChatAppApp: SwiftUI.App {
@@ -17,5 +14,6 @@ struct MatcheChatAppApp: SwiftUI.App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: [SyncedTimes.self, Conversation.self, Messages.self])
     }
 }

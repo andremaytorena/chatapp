@@ -14,9 +14,7 @@ struct MessageInboxView: View {
     @Environment(\.modelContext) var context
         
     @ObservedObject var socketManager = SocketConnecterManager.shared
-    
-    @EnvironmentObject private var authManager: AuthenticationManager
-    
+        
     @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject var userDataManager = UserDataManager.shared
@@ -118,7 +116,7 @@ struct MessageInboxView: View {
                             .frame(width: 25)
                             .bold()
                     }
-                    .disabled(!authManager.isLoggedIn)
+//                    .disabled(!authManager.isLoggedIn)
                 }
             }
         }

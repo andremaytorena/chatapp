@@ -41,24 +41,22 @@ struct ContentView: View {
     
     var body: some View {
         
-        NavigationStack {
+        ZStack {
             
             VStack {
                 
                 TabView {
-                    EmptyView()
+                    TestView()
                         .tabItem {
                             Image(systemName: "house")
                             Text("Home")
                         }
                     MessageInboxView(conversations: conversations)
-                        .environmentObject(authManager)
                         .tabItem {
                             Image(systemName: "message")
                             Text("Chats")
                         }
-                    EmptyView()
-                        .environmentObject(authManager)
+                    TestView()
                         .tabItem {
                             Image(systemName: "magnifyingglass")
                             Text("Search")
@@ -327,4 +325,10 @@ struct ContentView: View {
 }
 
 
-
+struct TestView: View {
+    var body: some View {
+        VStack {
+            Text("hello")
+        }
+    }
+}
